@@ -49,13 +49,10 @@ export default {
 $base-font: "Ubuntu", sans-serif;
 .btn {
   background-color: #eb345c;
-  // font-size: 0.9rem;
   font-weight: 600;
   color: white;
   border-radius: 0.5rem;
   border: none;
-  // padding: 0.7rem 1rem;
   font-family: $base-font;
-  // max-width: 500px;
 }
 </style>
