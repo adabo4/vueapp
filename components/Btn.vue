@@ -1,7 +1,5 @@
 <template>
-  <button class="btn">
-    <slot />
-  </button>
+  <button class="btn">Mám záujem o UX audit.</button>
 </template>
 
 <script setup></script>

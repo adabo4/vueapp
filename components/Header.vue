@@ -2,7 +2,7 @@
   <header>
     <div class="header-top">
       <Logo></Logo>
-      <Btn>Mám záujem o UX audit.</Btn>
+      <Btn></Btn>
     </div>
     <div class="header-div">
       <Headline>Zvýšte svoje zisky optimalizáciou vášho eshopu.</Headline>
