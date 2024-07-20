@@ -36,9 +36,9 @@ ul {
 }
 
 li {
-  padding: 5px 0;
+  padding: 5px;
   font-family: $base-font;
-  font-size: 1rem;
+  font-size: 1.2em;
   display: flex;
   gap: 0.3em;
   align-items: center;
