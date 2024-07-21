@@ -4,7 +4,7 @@
   <div class="main-top">
     <div class="main-left">
       <div class="headline-div">
-        <MainHeadline class="main-left-headline"
+        <MainHeadline class="main-headline"
           >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
         >
       </div>
@@ -39,7 +39,7 @@
   
   <div class="main-top">
     <div class="headline-div item">
-      <MainHeadline class="main-left-headline"
+      <MainHeadline class="main-headline"
         >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
       >
     </div>
@@ -72,7 +72,7 @@
   <div class="main-top">
     <div class="main-left">
       <div class="headline-div">
-        <MainHeadline class="main-left-headline"
+        <MainHeadline class="main-headline"
           >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
         >
       </div>
@@ -150,7 +150,7 @@ analýz a dát. Aj ich zásluhou"
 
   <section class="main-center">
     <div class="headline-div">
-      <MainHeadline class="main-left-headline"
+      <MainHeadline class="main-headline"
         >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
       >
     </div>
@@ -163,7 +163,7 @@ analýz a dát. Aj ich zásluhou"
   <div class="main-bottom">
     <div class="main-bottom-left">
       <div class="headline-div">
-        <MainHeadline class="main-left-headline"
+        <MainHeadline class="main-headline"
           >Zameriame sa na to <span>najdôležitejšie</span>.</MainHeadline
         >
       </div>
@@ -249,7 +249,7 @@ $base-font: "Ubuntu", sans-serif;
   }
 }
 
-.main-left-headline {
+.main-headline {
   font-size: 2.9em;
   font-family: $base-font;
   font-weight: 500;
