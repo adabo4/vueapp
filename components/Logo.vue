@@ -25,6 +25,7 @@ $base-font: "Ubuntu", sans-serif;
   flex-direction: row;
   align-items: flex-start;
   color: white;
+  font-family: $base-font;
 }
 .logo-left {
   font-size: 5rem;
@@ -32,12 +33,15 @@ $base-font: "Ubuntu", sans-serif;
 }
 .logo-right {
   margin-top: 1rem;
+  font-weight: 600;
 
   p:first-child {
-    font-size: 1.3rem;
+    font-size: 1.3em;
   }
-  p:last-child span {
-    font-size: 0.8rem;
+  p:last-child {
+    font-size: 0.7em;
+  }
+  span {
     text-transform: uppercase;
   }
 }
