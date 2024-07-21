@@ -99,7 +99,6 @@
         <Btn width="350px" height="60px" fontSize="1.1rem"
           >Mám záujem o UX audit.</Btn
         >
-        >
       </div>
     </div>
   </div>
@@ -119,6 +118,33 @@ následne vylepšovali pomocou relevantných
 analýz a dát. Aj ich zásluhou"
       :sliceWords="50"
     />
+  </div>
+
+  <div class="main-bottom">
+    <div class="main-bottom-left">
+      <div class="headline-div">
+        <MainHeadline class="main-left-headline"
+          >Zameriame sa na to <span>najdôležitejšie</span>.</MainHeadline
+        >
+      </div>
+
+      <p class="third-p">
+        Dosiahnite lepšie výsledky vašej webstránky alebo e-shopu
+        <strong>pomocou UX auditu.</strong>
+      </p>
+
+      <div style="width: 700px">
+        <Btn width="350px" height="60px" fontSize="1.1rem"
+          >Mám záujem o UX audit.</Btn
+        >
+      </div>
+    </div>
+
+    <div class="main-bottom-right">
+      <div class="list-component">
+        <ListComponent :items="anotherItems"> </ListComponent>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -173,10 +199,10 @@ $base-font: "Ubuntu", sans-serif;
   span {
     border-bottom: 10px rgba(255, 192, 203, 0.5) solid;
   }
-}
 
-.headline-div {
-  width: 350px;
+  .headline-div {
+    width: 350px;
+  }
 }
 
 .main-left-headline {
@@ -188,7 +214,8 @@ $base-font: "Ubuntu", sans-serif;
   white-space: pre-wrap;
 }
 
-.first-p {
+.first-p,
+.third-p {
   font-family: $base-font;
   font-size: 1.5em;
   line-height: 1.5em;
@@ -223,5 +250,37 @@ $base-font: "Ubuntu", sans-serif;
   display: flex;
   justify-content: space-between;
   margin: 1em auto;
+}
+
+.main-bottom {
+  display: flex;
+  width: 1000px;
+  margin: 5em auto;
+
+  span {
+    border-bottom: 10px rgba(255, 192, 203, 0.5) solid;
+  }
+
+  .headline-div {
+    width: 500px;
+  }
+
+  .third-p {
+    width: 380px;
+  }
+}
+
+.main-bottom-left {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5em;
+}
+
+.main-bottom-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 </style>
