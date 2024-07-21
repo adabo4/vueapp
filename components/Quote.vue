@@ -3,7 +3,7 @@
     <IcBaselineFormatQuote class="quote-icon" />
     <p>
       {{ shortText }}
-      <span v-if="!readMoreActivated">...</span>
+      <span v-if="!readMoreActivated"> ... </span>
       <a class="read-more" v-if="!readMoreActivated" @click="toggleReadMore"
         >čítať viac</a
       >
@@ -81,6 +81,7 @@ $base-font: "Ubuntu", sans-serif;
 
 .read-more,
 .read-less {
-  color: red;
+  color: #eb345c;
+  font-weight: 600;
 }
 </style>

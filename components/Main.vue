@@ -103,22 +103,58 @@
     </div>
   </div>
 
-  <div class="main-center">
-    <Quote
-      text="Pravidelné UX audity a postupné vylepšovanie nášho internetového obchodu je už niekoľko rokov súčasťou našej dlhodobej stratégie v predaji. UX tím v Riešeniach odvádza skvelú prácu, ktorú sprevádzajú viditeľné výsledky a spokojnosť našich zákazníkov. Okrem ich prístupu k nášmu biznisu si aj my dávame záležať na kvalite našich služieb. "
-      :sliceWords="40"
-    />
-    <Quote
-      text="S UX tímom Riešení úzko spolupracujeme už
+  <section class="quote-section">
+    <div class="quote-section-top">
+      <Quote
+        text="Pravidelné UX audity a postupné vylepšovanie nášho internetového obchodu je už niekoľko rokov súčasťou našej dlhodobej stratégie v predaji. UX tím v Riešeniach odvádza skvelú prácu, ktorú sprevádzajú viditeľné výsledky a spokojnosť našich zákazníkov. Okrem ich prístupu k nášmu biznisu si aj my dávame záležať na kvalite našich služieb. "
+        :sliceWords="40"
+      />
+      <Quote
+        text="S UX tímom Riešení úzko spolupracujeme už
 dlhé roky a sú dôležitým partnerom nášho
 biznisu. Vďaka ich know-how pre nás od
 samého začatku správne nastavili zdravý pomer
 prvotriedneho dizajnu a funkčnosti webu, ktorý
 následne vylepšovali pomocou relevantných
 analýz a dát. Aj ich zásluhou"
-      :sliceWords="50"
-    />
-  </div>
+        :sliceWords="50"
+      />
+      <!-- <QuoteAuthor
+        author="Jozef Korman"
+        position="Konateľ"
+        url="https://www.SvetNápojov.sk"
+        urlText="SvetNápojov.sk"
+        src="/img/icon1.png"
+      />
+      <QuoteAuthor
+        author="Richard Wohlstein"
+        position="Retail Manager"
+        url="https://www.AlainDelon.com"
+        urlText="AlainDelon.com"
+        src="/img/icon2.png"
+      /> -->
+    </div>
+    <div class="quote-section-bottom">
+      <QuoteAuthor
+        class="quote-author"
+        v-for="(authorData, index) in quoteAuthors"
+        :key="index"
+        :author="authorData.author"
+        :position="authorData.position"
+        :url="authorData.url"
+        :urlText="authorData.urlText"
+        :src="authorData.src"
+      />
+    </div>
+  </section>
+
+  <section class="main-center">
+    <div class="headline-div">
+      <MainHeadline class="main-left-headline"
+        >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
+      >
+    </div>
+  </section>
 
   <div class="main-bottom">
     <div class="main-bottom-left">
@@ -153,6 +189,8 @@ import Btn from "./Btn.vue";
 import ListComponent from "./ListComponent.vue";
 import { listItems, anotherListItems } from "~/data/listItems";
 import Quote from "~/components/Quote.vue";
+import QuoteAuthor from "./QuoteAuthor.vue";
+import { quoteAuthors } from "~/data/authordata.js";
 
 export default {
   components: {
@@ -163,9 +201,11 @@ export default {
     return {
       myItems: listItems,
       anotherItems: anotherListItems,
+      quoteAuthors,
     };
   },
   Btn,
+  QuoteAuthor,
 };
 </script>
 
@@ -197,7 +237,7 @@ $base-font: "Ubuntu", sans-serif;
   flex-direction: column;
   gap: 3em;
   span {
-    border-bottom: 10px rgba(255, 192, 203, 0.5) solid;
+    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
   }
 
   .headline-div {
@@ -245,11 +285,37 @@ $base-font: "Ubuntu", sans-serif;
   }
 }
 
-.main-center {
+.quote-section {
   width: 1000px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-direction: column;
   margin: 1em auto;
+}
+
+.quote-section-top {
+  display: flex;
+  gap: 5em;
+}
+
+.quote-section-bottom {
+  display: flex;
+  gap: 5em;
+
+  .quote-author {
+    width: 460px;
+  }
+}
+
+.main-center {
+  .headline-div {
+    margin: 2em auto;
+    width: 500px;
+    text-align: center;
+  }
+  span {
+    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
+  }
 }
 
 .main-bottom {
@@ -258,7 +324,7 @@ $base-font: "Ubuntu", sans-serif;
   margin: 5em auto;
 
   span {
-    border-bottom: 10px rgba(255, 192, 203, 0.5) solid;
+    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
   }
 
   .headline-div {
