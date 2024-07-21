@@ -25,7 +25,7 @@ export default {
     },
     sliceWords: {
       type: Number,
-      default: 55, // Adjust the number of words to slice for the initial text display
+      default: 55,
     },
   },
   data() {

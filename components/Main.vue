@@ -154,6 +154,10 @@ analýz a dát. Aj ich zásluhou"
         >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
       >
     </div>
+
+    <div class="main-center-numbers">
+      <Numbers />
+    </div>
   </section>
 
   <div class="main-bottom">
@@ -309,7 +313,7 @@ $base-font: "Ubuntu", sans-serif;
 
 .main-center {
   .headline-div {
-    margin: 2em auto;
+    margin: 4em auto;
     width: 500px;
     text-align: center;
   }
