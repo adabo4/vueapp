@@ -7,10 +7,16 @@
         </MaterialSymbolsLightCancel
       ></span>
       <Input>Meno:</Input>
-      <Input>Webstránka:</Input>
+      <div class="number">
+        <Input>Email:</Input>
+        <Input>Tel. čislo:</Input>
+      </div>
       <Input>Webstránka:</Input>
       <Textarea>Poznámka:</Textarea>
-      <Btn width="350px" height="60px" fontSize="1.1rem">Kontaktujte ma.</Btn>
+      <Btn width="90%" height="70px" fontSize="1.1rem" class="contact-btn"
+        >Kontaktujte ma.</Btn
+      >
+      <!-- <button class="contact-btn">Kontaktujte ma.</button> -->
     </form>
   </div>
 </template>
@@ -34,7 +40,7 @@ $base-font: "Ubuntu", sans-serif;
   position: relative;
   padding: 1em;
   width: 600px;
-  margin: 0 auto;
+  margin: auto;
   background-color: white;
   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
 }
@@ -60,5 +66,17 @@ $base-font: "Ubuntu", sans-serif;
   text-align: center;
   margin: 50px auto;
   font-weight: 900;
+}
+.number {
+  display: flex;
+
+  .form-input {
+    width: 40%;
+  }
+}
+
+.contact-btn {
+  display: block;
+  margin: 1em auto;
 }
 </style>
