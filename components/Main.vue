@@ -96,7 +96,11 @@
       </div>
 
       <div style="width: 700px">
-        <Btn width="350px" height="60px" fontSize="1.1rem"
+        <Btn
+          width="350px"
+          height="60px"
+          fontSize="1.1rem"
+          @open="showModal = true"
           >Mám záujem o UX audit.</Btn
         >
       </div>
@@ -174,7 +178,11 @@ analýz a dát. Aj ich zásluhou"
       </p>
 
       <div style="width: 700px">
-        <Btn width="350px" height="60px" fontSize="1.1rem"
+        <Btn
+          width="350px"
+          height="60px"
+          fontSize="1.1rem"
+          @open="showModal = true"
           >Mám záujem o UX audit.</Btn
         >
       </div>
@@ -186,6 +194,10 @@ analýz a dát. Aj ich zásluhou"
       </div>
     </div>
   </div>
+
+  <div class="form" v-if="showModal">
+    <Form @close="toggleModal"> </Form>
+  </div>
 </template>
 
 <script>
@@ -195,8 +207,14 @@ import { listItems, anotherListItems } from "~/data/listItems";
 import Quote from "~/components/Quote.vue";
 import QuoteAuthor from "./QuoteAuthor.vue";
 import { quoteAuthors } from "~/data/authordata.js";
+import Form from "./Form.vue";
 
 export default {
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    },
+  },
   components: {
     ListComponent,
   },
@@ -206,6 +224,7 @@ export default {
       myItems: listItems,
       anotherItems: anotherListItems,
       quoteAuthors,
+      showModal: false,
     };
   },
   Btn,

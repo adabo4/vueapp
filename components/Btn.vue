@@ -1,5 +1,5 @@
 <template>
-  <button :class="btn" :style="customStyle">
+  <button :class="btn" :style="customStyle" @click="toggleModal">
     <slot></slot>
   </button>
 </template>
@@ -23,6 +23,15 @@ export default {
     padding: {
       type: String,
       default: "0.7rem 1rem",
+    },
+    showModal: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    toggleModal() {
+      this.$emit("open");
     },
   },
   computed: {
