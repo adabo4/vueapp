@@ -9,17 +9,16 @@
           ><MaterialSymbolsLightCancel @click="closeModal">
           </MaterialSymbolsLightCancel
         ></span>
-        <Input>Meno:</Input>
+        <Input req="true">Meno:</Input>
         <div class="number">
-          <Input>Email:</Input>
+          <Input req="true">Email:</Input>
           <Input>Tel. čislo:</Input>
         </div>
         <Input>Webstránka:</Input>
-        <Textarea>Poznámka:</Textarea>
+        <Textarea req="true">Poznámka:</Textarea>
         <Btn width="90%" height="70px" fontSize="1.1rem" class="contact-btn"
           >Kontaktujte ma.</Btn
         >
-        <!-- <button class="contact-btn">Kontaktujte ma.</button> -->
       </form>
     </div>
   </div>
@@ -61,7 +60,7 @@ $base-font: "Ubuntu", sans-serif;
   margin: auto;
   background-color: white;
   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
+  max-width: 600px;
   width: 90%;
   margin-top: 100px; /* Set the desired margin-top */
 }

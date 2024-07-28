@@ -1,11 +1,19 @@
 <template>
   <div class="form-input">
-    <label><slot></slot><span> *</span></label>
+    <label><slot></slot><span v-if="req"> *</span></label>
     <input type="text" />
   </div>
 </template>
 
-<script setup></script>
+<script>
+export default {
+  name: "Input",
+  props: {
+    type: Boolean,
+    req: true,
+  },
+};
+</script>
 
 <style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
