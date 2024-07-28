@@ -196,7 +196,7 @@ analýz a dát. Aj ich zásluhou"
   </div>
 
   <div class="form" v-if="showModal">
-    <Form @close="toggleModal"> </Form>
+    <Form @close="showModal = false"> </Form>
   </div>
 </template>
 
@@ -210,9 +210,12 @@ import { quoteAuthors } from "~/data/authordata.js";
 import Form from "./Form.vue";
 
 export default {
+  props: {
+    showModal: Boolean,
+  },
   methods: {
-    toggleModal() {
-      this.showModal = !this.showModal;
+    closeModal() {
+      this.$emit("toggle-modal");
     },
   },
   components: {
@@ -227,6 +230,7 @@ export default {
       showModal: false,
     };
   },
+
   Btn,
   QuoteAuthor,
 };

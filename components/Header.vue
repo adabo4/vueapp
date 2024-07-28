@@ -3,7 +3,9 @@
     <div class="header-top">
       <Logo></Logo>
 
-      <Btn style="width: 200px">Mám záujem o UX audit.</Btn>
+      <Btn @open="emitOpenModal" style="width: 200px"
+        >Mám záujem o UX audit.</Btn
+      >
     </div>
     <div class="header-div">
       <Headline>Zvýšte svoje zisky optimalizáciou vášho eshopu.</Headline>
@@ -17,6 +19,11 @@ import Btn from "./Btn.vue";
 export default {
   components: {
     Btn,
+  },
+  methods: {
+    emitOpenModal() {
+      this.$emit("open-modal");
+    },
   },
 };
 </script>
