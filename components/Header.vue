@@ -1,17 +1,4 @@
 <template>
-  <!-- <header class="header-all">
-    <div class="header-top">
-      <Logo></Logo>
-
-      <Btn @open="emitOpenModal" style="width: 200px"
-        >Mám záujem o UX audit.</Btn
-      >
-    </div>
-    <div class="header-div">
-      <Headline>Zvýšte svoje zisky optimalizáciou vášho eshopu.</Headline>
-    </div>
-  </header> -->
-
   <header>
     <div class="grid-container">
       <div class="logoitem"><Logo /></div>
@@ -50,12 +37,6 @@ $base-font: "Ubuntu", sans-serif;
 header {
   height: 550px;
   background-image: linear-gradient(170deg, #3d3080 55%, #6d2a79, #912675 100%);
-  // background: #3d3080;
-  // background: linear-gradient(
-  //   170deg,
-  //   rgba(61, 46, 128, 1) 40%,
-  //   rgba(161, 33, 113, 1) 120%
-  // );
 }
 
 .header-div {
@@ -71,39 +52,38 @@ header {
   justify-content: space-around;
   align-items: center;
 }
-/*912675*/
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto; /* Two columns for logo and button */
-  grid-template-rows: auto auto; /* Two rows: first for logo and button, second for headline */
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   align-items: center;
   width: 100%;
-  column-gap: 1em; /* Space between logo and button */
+  column-gap: 1em;
   row-gap: 2em;
 }
 
 .logoitem {
-  grid-column: 1; /* First column */
-  grid-row: 1; /* First row */
+  grid-column: 1;
+  grid-row: 1;
   height: 10em;
   display: grid;
-  place-items: center; /* Align logo content to the right */
+  place-items: center;
 }
 
 .buttonitem {
   display: grid;
-  grid-column: 2; /* Second column */
-  grid-row: 1; /* First row */
-  text-align: center; /* Align button to the right */
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
   height: 1em;
   place-items: center;
 }
 
 .header-div {
-  grid-column: 1 / span 2; /* Span across both columns */
-  grid-row: 2; /* Second row */
-  text-align: center; /* Center the headline text */
+  grid-column: 1 / span 2;
+  grid-row: 2;
+  text-align: center;
 }
 
 @media screen and (max-width: 800px) {
@@ -112,8 +92,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // grid-template-rows: 1fr 1fr 1fr 1fr;
-    // grid-template-columns: 1fr 1fr 1fr;
   }
 
   header {
@@ -125,7 +103,6 @@ header {
 
   .headeritem {
     margin-top: 2em;
-    // grid-template-rows: span 3 3 / 4;
 
     h1 {
       font-size: 2.5em;
@@ -136,7 +113,6 @@ header {
     align-self: flex-start;
     padding: 1em;
     margin-left: 1em;
-    // grid-template-rows: span 3;
   }
 
   .buttonitem {
