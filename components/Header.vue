@@ -30,10 +30,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
-$base-font: "Ubuntu", sans-serif;
-
 header {
   height: 550px;
   background-image: linear-gradient(170deg, #3d3080 55%, #6d2a79, #912675 100%);

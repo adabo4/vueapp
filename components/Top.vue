@@ -93,6 +93,10 @@ $base-font: "Ubuntu", sans-serif;
 
 .headline-div {
   width: 40%;
+
+  span {
+    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
+  }
 }
 
 .tooop,
