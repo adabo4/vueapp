@@ -69,7 +69,7 @@
     </div>
   </div> -->
 
-  <div class="main-top">
+  <!-- THIS worked <div class="main-top">
     <div class="main-left">
       <div class="headline-div">
         <MainHeadline class="main-headline"
@@ -105,7 +105,47 @@
         >
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <!-- redone 
+   <div class="main-top">
+    <div class="main-left">
+      <div class="headline-div">
+        <MainHeadline class="main-headline"
+          >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
+        >
+      </div>
+
+      <p class="first-p">
+        UX auditom Vášho riešenia lepšie pochopíte, ako vaší zákazníci používajú
+        Váš produkt, <strong>zvýšite ich spokojnosť a hlavne zisky.</strong>
+      </p>
+
+      <p class="second-p">
+        Dosiahnite lepšie výsledky vašej webstránky alebo e-shopu
+        <strong>pomocou UX auditu.</strong>
+      </p>
+    </div>
+    <div class="main-right">
+      <div class="partners-logo">
+        <PartnersLogo />
+      </div>
+      <div class="list-component">
+        <ListComponent :items="myItems"> </ListComponent>
+      </div>
+
+      <div style="width: 700px">
+        <Btn
+          width="350px"
+          height="60px"
+          fontSize="1.1rem"
+          @open="showModal = true"
+          >Mám záujem o UX audit.</Btn
+        >
+      </div>
+    </div>
+  </div> -->
+  <Top @toggle-modal="$emit('toggle-modal')" />
 
   <section class="quote-section">
     <div class="quote-section-top">
@@ -236,7 +276,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 $base-font: "Ubuntu", sans-serif;
@@ -249,6 +289,26 @@ $base-font: "Ubuntu", sans-serif;
 //   border: 1px solid blue;
 //   gap: 20px;
 // }
+
+.tooop {
+  display: flex;
+  margin: 6em auto;
+  gap: 3em;
+  width: 1000px;
+  justify-content: space-between;
+
+  span {
+    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
+  }
+}
+
+.ceeenter {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+  margin: 0 auto;
+  width: 1000px;
+}
 
 .main-top {
   position: relative;
@@ -317,7 +377,7 @@ $base-font: "Ubuntu", sans-serif;
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  margin: 1em auto;
+  margin: 6em auto;
 }
 
 .quote-section-top {
@@ -375,5 +435,11 @@ $base-font: "Ubuntu", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 825px) {
+  .main-top {
+    flex-direction: column;
+  }
 }
 </style>
