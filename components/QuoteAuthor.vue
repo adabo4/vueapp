@@ -50,7 +50,7 @@ $base-font: "Ubuntu", sans-serif;
   gap: 1em;
   justify-content: flex-start;
   align-items: center;
-  margin: 1em 0;
+  margin: 1em auto;
 }
 
 .quote-author {

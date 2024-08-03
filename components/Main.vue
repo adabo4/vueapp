@@ -150,9 +150,19 @@
   <section class="quote-section">
     <div class="quote-section-top">
       <Quote
-        text="Pravidelné UX audity a postupné vylepšovanie nášho internetového obchodu je už niekoľko rokov súčasťou našej dlhodobej stratégie v predaji. UX tím v Riešeniach odvádza skvelú prácu, ktorú sprevádzajú viditeľné výsledky a spokojnosť našich zákazníkov. Okrem ich prístupu k nášmu biznisu si aj my dávame záležať na kvalite našich služieb. "
+        text="Pravidelné UX audity a postupné vylepšovanie nášho internetového obchodu je už niekoľko rokov súčasťou našej dlhodobej stratégie v predaji. UX tím v Riešeniach odvádza skvelú prácu, ktorú sprevádzajú viditeľné výsledky a spokojnosť našich zákazníkov. Okrem ich prístupu k nášmu biznisu si aj my dávame záležať na kvalite našich služieb. Asi by to chcelo nejaky dlasi text about dmeogáffa fa sfla flakf ldkf asfk dlfk  "
         :sliceWords="40"
       />
+
+      <QuoteAuthor
+        author="Jozef Korman"
+        position="Konateľ"
+        url="https://www.SvetNápojov.sk"
+        urlText="SvetNápojov.sk"
+        src="/img/icon1.png"
+      />
+    </div>
+    <div class="quote-section-bottom">
       <Quote
         text="S UX tímom Riešení úzko spolupracujeme už
 dlhé roky a sú dôležitým partnerom nášho
@@ -163,23 +173,14 @@ následne vylepšovali pomocou relevantných
 analýz a dát. Aj ich zásluhou"
         :sliceWords="50"
       />
-      <!-- <QuoteAuthor
-        author="Jozef Korman"
-        position="Konateľ"
-        url="https://www.SvetNápojov.sk"
-        urlText="SvetNápojov.sk"
-        src="/img/icon1.png"
-      />
       <QuoteAuthor
         author="Richard Wohlstein"
         position="Retail Manager"
         url="https://www.AlainDelon.com"
         urlText="AlainDelon.com"
         src="/img/icon2.png"
-      /> -->
-    </div>
-    <div class="quote-section-bottom">
-      <QuoteAuthor
+      />
+      <!-- <QuoteAuthor
         class="quote-author"
         v-for="(authorData, index) in quoteAuthors"
         :key="index"
@@ -188,11 +189,11 @@ analýz a dát. Aj ich zásluhou"
         :url="authorData.url"
         :urlText="authorData.urlText"
         :src="authorData.src"
-      />
+      /> -->
     </div>
   </section>
 
-  <section class="main-center">
+  <!-- <section class="main-center">
     <div class="headline-div">
       <MainHeadline class="main-headline"
         >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
@@ -202,9 +203,9 @@ analýz a dát. Aj ich zásluhou"
     <div class="main-center-numbers">
       <Numbers />
     </div>
-  </section>
+  </section> -->
 
-  <div class="main-bottom">
+  <!-- <div class="main-bottom">
     <div class="main-bottom-left">
       <div class="headline-div">
         <MainHeadline class="main-headline"
@@ -218,9 +219,7 @@ analýz a dát. Aj ich zásluhou"
       </p>
 
       <div style="width: 700px">
-        <Btn width="350px" height="60px" fontSize="1.1rem"
-          >Mám záujem o UX audit.</Btn
-        >
+        <Btn height="60px" fontSize="1.1rem">Mám záujem o UX audit.</Btn>
       </div>
     </div>
 
@@ -229,7 +228,7 @@ analýz a dát. Aj ich zásluhou"
         <ListComponent :items="anotherItems"> </ListComponent>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <!-- <div class="form" v-if="showModal">
     <Form @close="showModal = false"> </Form>
@@ -372,18 +371,18 @@ $base-font: "Ubuntu", sans-serif;
   width: 1000px;
   display: flex;
   justify-content: space-around;
-  flex-direction: column;
   margin: 6em auto;
 }
 
 .quote-section-top {
   display: flex;
-  gap: 5em;
+  flex-direction: column;
 }
 
 .quote-section-bottom {
   display: flex;
-  gap: 5em;
+
+  flex-direction: column;
 
   .quote-author {
     width: 460px;
@@ -436,6 +435,19 @@ $base-font: "Ubuntu", sans-serif;
 @media screen and (max-width: 825px) {
   .main-top {
     flex-direction: column;
+  }
+
+  .quote-section {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .quote-section-bottom {
+    margin: 1em 0;
+  }
+
+  .btn {
+    width: 50%;
   }
 }
 </style>

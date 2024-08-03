@@ -8,10 +8,10 @@
 export default {
   name: "Btn",
   props: {
-    width: {
-      type: String,
-      default: "auto",
-    },
+    // width: {
+    //   type: String,
+    //   default: "auto",
+    // },
     height: {
       type: String,
       default: "auto",
@@ -43,7 +43,7 @@ export default {
     },
     customStyle() {
       return {
-        width: this.width,
+        // width: this.width,
         height: this.height,
         fontSize: this.fontSize,
         padding: this.padding,
@@ -64,5 +64,6 @@ $base-font: "Ubuntu", sans-serif;
   border-radius: 0.5rem;
   border: none;
   font-family: $base-font;
+  width: 100%;
 }
 </style>

@@ -25,9 +25,7 @@
         <strong>pomocou UX auditu.</strong>
       </p>
       <div class="btn-comp">
-        <Btn width="400px" height="70px" fontSize="1.1rem"
-          >Mám záujem o UX audit.</Btn
-        >
+        <Btn height="70px" fontSize="1.1rem">Mám záujem o UX audit.</Btn>
       </div>
     </div>
   </div>
@@ -137,6 +135,10 @@ $base-font: "Ubuntu", sans-serif;
   white-space: pre-line;
 }
 
+.btn {
+  width: 25em;
+}
+
 @media screen and (max-width: 800px) {
   .top-grid {
     width: 100%;
@@ -197,15 +199,17 @@ $base-font: "Ubuntu", sans-serif;
 
     .second-p {
       width: 90%;
-      margin: 1em auto;
+      margin: 0 auto;
       padding: 1em;
       line-height: 1.8em;
     }
 
     .btn-comp {
-      width: 80%;
+      margin: 1em auto;
+    }
+    .btn {
+      width: 20em;
       margin: 0 auto;
-      margin-left: 1em;
     }
   }
 }

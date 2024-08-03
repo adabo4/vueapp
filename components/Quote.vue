@@ -56,7 +56,7 @@ $base-font: "Ubuntu", sans-serif;
 .quote-icon-container {
   position: relative;
   width: 460px;
-  max-height: 300px;
+  max-height: auto;
   border: 2px solid rgba(128, 128, 128, 0.3);
 
   p {
@@ -67,7 +67,7 @@ $base-font: "Ubuntu", sans-serif;
     margin: 1em;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7;
+    // -webkit-line-clamp: 7;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -83,5 +83,16 @@ $base-font: "Ubuntu", sans-serif;
 .read-less {
   color: #eb345c;
   font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+  .quote-icon-container {
+    width: 360px;
+    margin: auto;
+
+    p {
+      display: block;
+    }
+  }
 }
 </style>
