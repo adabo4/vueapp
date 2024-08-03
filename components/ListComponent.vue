@@ -46,5 +46,8 @@ li {
 
 .check-icon {
   color: #0bac0b;
+  width: 1.5em; /* Set a fixed width */
+  height: 1.5em; /* Set a fixed height */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 </style>

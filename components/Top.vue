@@ -79,10 +79,9 @@ $base-font: "Ubuntu", sans-serif;
 }
 
 .top-grid {
-  display: column;
-  gap: 2em;
+  display: grid;
   width: 1000px;
-  margin: auto;
+  margin: 2em auto;
 }
 
 .headline-div {
@@ -96,10 +95,10 @@ $base-font: "Ubuntu", sans-serif;
 .tooop,
 .ceeenter,
 .bottooom {
-  margin: auto;
+  margin: 2em auto;
   display: flex;
   justify-content: space-between;
-  margin: 2em 0;
+  width: 100%;
 }
 
 .partners-logo {
@@ -184,10 +183,10 @@ $base-font: "Ubuntu", sans-serif;
       margin: 1em auto;
       padding: 1em;
 
-      .check-icon {
-        width: 40px;
-        height: 40px;
-      }
+      // .check-icon {
+      //   width: 40px;
+      //   height: 40px;
+      // }
     }
   }
 

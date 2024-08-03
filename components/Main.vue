@@ -205,6 +205,28 @@ analýz a dát. Aj ich zásluhou"
     </div>
   </section> -->
 
+  <div class="main-bottom">
+    <div class="headline-div first">
+      <MainHeadline class="main-headline"
+        >Zameriame sa na to <span>najdôležitejšie</span>.</MainHeadline
+      >
+    </div>
+
+    <div class="main-bottom-left second">
+      <p class="third-p">
+        Dosiahnite lepšie výsledky vašej webstránky alebo e-shopu
+        <strong>pomocou UX auditu.</strong>
+      </p>
+      <div class="main-bottom-third">
+        <Btn height="60px" fontSize="1.1rem">Mám záujem o UX audit.</Btn>
+      </div>
+    </div>
+
+    <div class="list-component third">
+      <ListComponent :items="anotherItems"> </ListComponent>
+    </div>
+  </div>
+
   <!-- <div class="main-bottom">
     <div class="main-bottom-left">
       <div class="headline-div">
@@ -400,36 +422,62 @@ $base-font: "Ubuntu", sans-serif;
   }
 }
 
+// .main-bottom {
+//   display: flex;
+//   width: 1000px;
+//   margin: 5em auto;
+
+//   span {
+//     border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
+//   }
+
+//   .headline-div {
+//     width: 500px;
+//   }
+
+//   .third-p {
+//     width: 380px;
+//   }
+// }
+
+// .main-bottom-left {
+//   display: flex;
+//   width: 50%;
+//   justify-content: space-between;
+//   flex-direction: column;
+//   gap: 5em;
+// }
+
+// .main-bottom-right {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+// }
+
 .main-bottom {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
   width: 1000px;
-  margin: 5em auto;
+  margin: auto;
+  row-gap: 4em;
 
-  span {
-    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
+  .first {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    width: auto;
   }
 
-  .headline-div {
-    width: 500px;
+  .second {
+    grid-row: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
-
-  .third-p {
-    width: 380px;
+  .third {
+    grid-row: 2 / 3;
+    width: 600px;
   }
-}
-
-.main-bottom-left {
-  display: flex;
-  width: 50%;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 5em;
-}
-
-.main-bottom-right {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 
 @media screen and (max-width: 825px) {
@@ -448,6 +496,58 @@ $base-font: "Ubuntu", sans-serif;
 
   .btn {
     width: 50%;
+  }
+
+  .main-bottom {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: auto;
+    margin: 0 auto;
+    gap: 0;
+
+    .first {
+      h2 {
+        font-size: 2.5em;
+        padding: 0.1em;
+      }
+    }
+    .first,
+    .second,
+    .third,
+    .fourth {
+      padding: 1em;
+      width: 100%;
+    }
+
+    .third,
+    .second {
+      grid-column: 1 / 1;
+    }
+
+    .third {
+      width: auto;
+      margin: auto;
+    }
+
+    .second {
+      grid-row: 3 / 3;
+
+      width: auto;
+      margin: auto;
+
+      p {
+        width: auto;
+        margin: 1em;
+      }
+
+      button {
+        width: 100%;
+        margin: 1em auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
   }
 }
 </style>
