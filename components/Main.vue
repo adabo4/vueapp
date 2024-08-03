@@ -193,7 +193,7 @@ analýz a dát. Aj ich zásluhou"
     </div>
   </section>
 
-  <!-- <section class="main-center">
+  <section class="main-center">
     <div class="headline-div">
       <MainHeadline class="main-headline"
         >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
@@ -203,7 +203,7 @@ analýz a dát. Aj ich zásluhou"
     <div class="main-center-numbers">
       <Numbers />
     </div>
-  </section> -->
+  </section>
 
   <div class="main-bottom">
     <div class="headline-div first">
@@ -496,6 +496,18 @@ $base-font: "Ubuntu", sans-serif;
 
   .btn {
     width: 50%;
+  }
+
+  .main-center {
+    .headline-div {
+      width: auto;
+      text-align: start;
+      margin: 1em;
+
+      .main-headline {
+        font-size: 2.5em;
+      }
+    }
   }
 
   .main-bottom {

@@ -24,10 +24,10 @@
     </div>
     <div class="item num">
       <div class="number-icon">
-        <img src="/public/img/two.png" alt="Number One" />
+        <img src="/public/img/two.png" alt="Number Two" class="num-two" />
       </div>
 
-      <div class="number-text">
+      <div class="number-text second">
         <h5>Zbieranie dát</h5>
         <p>
           Zvolíme vhodné metodiky a nástroje na sledovanie správania
@@ -37,7 +37,7 @@
     </div>
     <div class="item num">
       <div class="number-icon">
-        <img src="/public/img/three.png" alt="Number One" />
+        <img src="/public/img/three.png" alt="Number Three" />
       </div>
       <div class="number-text">
         <h5>Vyhodnotenie</h5>
@@ -52,7 +52,7 @@
     </div>
     <div class="item num four">
       <div class="number-icon">
-        <img src="/public/img/four.png" alt="Number One" />
+        <img src="/public/img/four.png" alt="Number Four" class="num-four" />
       </div>
 
       <div class="number-text">
@@ -106,6 +106,9 @@ $base-font: "Ubuntu", sans-serif;
 .number-text {
   width: 380px;
   line-height: 1.6em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 
   h5 {
     font-size: 1.5em;
@@ -114,6 +117,38 @@ $base-font: "Ubuntu", sans-serif;
   p {
     font-size: 1em;
     margin: 0.5em 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .numbers-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: auto;
+
+    .number-arrow-left,
+    .number-arrow-right {
+      display: none;
+    }
+
+    .item {
+      grid-column: 1 / 2;
+      margin: 1em;
+      gap: 1em;
+    }
+
+    .number-icon {
+      width: 100%;
+
+      .num-two,
+      .num-four {
+        display: none;
+      }
+    }
+    .number-text {
+      width: auto;
+      font-size: 1.2em;
+    }
   }
 }
 </style>
