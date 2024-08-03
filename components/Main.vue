@@ -145,7 +145,7 @@
       </div>
     </div>
   </div> -->
-  <Top @toggle-modal="$emit('toggle-modal')" />
+  <Top />
 
   <section class="quote-section">
     <div class="quote-section-top">
@@ -218,11 +218,7 @@ analýz a dát. Aj ich zásluhou"
       </p>
 
       <div style="width: 700px">
-        <Btn
-          width="350px"
-          height="60px"
-          fontSize="1.1rem"
-          @open="showModal = true"
+        <Btn width="350px" height="60px" fontSize="1.1rem"
           >Mám záujem o UX audit.</Btn
         >
       </div>
@@ -235,9 +231,9 @@ analýz a dát. Aj ich zásluhou"
     </div>
   </div>
 
-  <div class="form" v-if="showModal">
+  <!-- <div class="form" v-if="showModal">
     <Form @close="showModal = false"> </Form>
-  </div>
+  </div> -->
 </template>
 
 <script>
@@ -250,9 +246,9 @@ import { quoteAuthors } from "~/data/authordata.js";
 import Form from "./Form.vue";
 
 export default {
-  props: {
-    showModal: Boolean,
-  },
+  // props: {
+  //   showModal: Boolean,
+  // },
   methods: {
     closeModal() {
       this.$emit("toggle-modal");

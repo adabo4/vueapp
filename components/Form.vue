@@ -1,14 +1,13 @@
 <template>
-  <div class="modal">
+  <div class="modal" v-if="isDialogOpen">
     <div class="modal-content">
-      <form @submit.prevent="onSubmit" class="form">
+      <form class="form">
         <h2 class="form-headline">
           Jednoducho nám napíšte a my sa Vám ozveme.
         </h2>
-        <span class="close-icon"
-          ><MaterialSymbolsLightCancel @click="closeModal">
-          </MaterialSymbolsLightCancel
-        ></span>
+        <button class="close-icon" @click="closeDialog">
+          <MaterialSymbolsLightCancel> </MaterialSymbolsLightCancel>
+        </button>
         <Input req="true">Meno:</Input>
         <div class="number">
           <Input req="true">Email:</Input>
@@ -24,14 +23,31 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Form",
-  methods: {
-    closeModal() {
-      this.$emit("close");
-    },
-  },
+<script setup lang="ts">
+// export default {
+//   name: "Form",
+//   methods: {
+//     closeModal() {
+//       this.$emit("close");
+//     },
+//   },
+// };
+
+const isDialogOpen = ref(false);
+
+onMounted(() => {
+  window.addEventListener("message", (event) => {
+    if (event.data === "open-dialog") {
+      isDialogOpen.value = true;
+    }
+    if (event.data === "close-dialog") {
+      isDialogOpen.value = false;
+    }
+  });
+});
+
+const closeDialog = function () {
+  isDialogOpen.value = false;
 };
 </script>
 

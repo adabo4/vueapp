@@ -1,7 +1,7 @@
 <template>
   <div class="form-input">
     <label><slot></slot><span v-if="req"> *</span></label>
-    <input type="text" />
+    <input type="email" />
   </div>
 </template>
 

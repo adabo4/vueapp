@@ -25,11 +25,7 @@
         <strong>pomocou UX auditu.</strong>
       </p>
       <div class="btn-comp">
-        <Btn
-          width="400px"
-          height="70px"
-          fontSize="1.1rem"
-          @click="$emit('toggle-modal')"
+        <Btn width="400px" height="70px" fontSize="1.1rem"
           >Mám záujem o UX audit.</Btn
         >
       </div>
@@ -47,14 +43,14 @@ import { quoteAuthors } from "~/data/authordata.js";
 import Form from "./Form.vue";
 
 export default {
-  props: {
-    showModal: Boolean,
-  },
-  methods: {
-    closeModal() {
-      this.$emit("toggle-modal");
-    },
-  },
+  // props: {
+  //   showModal: Boolean,
+  // },
+  // methods: {
+  //   closeModal() {
+  //     this.$emit("toggle-modal");
+  //   },
+  // },
   components: {
     ListComponent,
   },
@@ -64,7 +60,7 @@ export default {
       myItems: listItems,
       anotherItems: anotherListItems,
       quoteAuthors,
-      showModal: false,
+      // showModal: false,
     };
   },
 
