@@ -80,7 +80,8 @@ $base-font: "Ubuntu", sans-serif;
 
 .top-grid {
   display: grid;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 2em auto;
 }
 
@@ -134,11 +135,13 @@ $base-font: "Ubuntu", sans-serif;
   white-space: pre-line;
 }
 
-.btn {
-  width: 25em;
+.btn-comp {
+  .btn {
+    width: 25em;
+  }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .top-grid {
     width: 100%;
     justify-content: center;

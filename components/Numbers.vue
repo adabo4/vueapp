@@ -84,7 +84,8 @@ $base-font: "Ubuntu", sans-serif;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 2em auto;
 }
 
@@ -120,7 +121,7 @@ $base-font: "Ubuntu", sans-serif;
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 900px) {
   .numbers-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;

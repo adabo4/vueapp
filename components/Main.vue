@@ -390,7 +390,8 @@ $base-font: "Ubuntu", sans-serif;
 }
 
 .quote-section {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   justify-content: space-around;
   margin: 6em auto;
@@ -454,18 +455,21 @@ $base-font: "Ubuntu", sans-serif;
 //   justify-content: flex-end;
 // }
 
+/* BOTTOM */
+
 .main-bottom {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 2fr;
   grid-template-rows: auto auto auto;
-  width: 1000px;
-  margin: auto;
-  row-gap: 4em;
+  width: 100%;
+  max-width: 1000px;
+  margin: 1em auto;
+  gap: 4em;
 
   .first {
     grid-row: 1 / 2;
     grid-column: 1 / 2;
-    width: auto;
+    width: 100%;
   }
 
   .second {
@@ -473,14 +477,20 @@ $base-font: "Ubuntu", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    width: 100%;
   }
+
   .third {
     grid-row: 2 / 3;
-    width: 600px;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 825px) {
+@media screen and (max-width: 900px) {
   .main-top {
     flex-direction: column;
   }
