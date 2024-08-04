@@ -2,7 +2,7 @@
   <header>
     <div class="grid-container">
       <div class="logoitem"><Logo /></div>
-      <div class="header-div headeritem">
+      <div class="header-div">
         <Headline>Zvýšte svoje zisky optimalizáciou vášho eshopu.</Headline>
       </div>
       <div class="buttonitem">
@@ -95,13 +95,10 @@ header {
   }
   .header-div {
     width: 100%;
-  }
-
-  .headeritem {
     margin-top: 2em;
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2em;
     }
   }
 
