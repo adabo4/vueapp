@@ -485,8 +485,11 @@ $base-font: "Ubuntu", sans-serif;
     width: 100%;
   }
 
-  .btn {
+  .main-bottom-third {
     width: 100%;
+    max-width: 600px;
+
+    margin: 0 auto;
   }
 }
 
@@ -502,10 +505,6 @@ $base-font: "Ubuntu", sans-serif;
 
   .quote-section-bottom {
     margin: 1em 0;
-  }
-
-  .btn {
-    width: 50%;
   }
 
   .main-center {
@@ -526,6 +525,10 @@ $base-font: "Ubuntu", sans-serif;
     width: auto;
     margin: 0 auto;
     gap: 0;
+
+    .main-bottom-third {
+      width: 50%;
+    }
 
     .first {
       h2 {
@@ -562,14 +565,25 @@ $base-font: "Ubuntu", sans-serif;
         margin: 1em;
       }
 
-      button {
-        width: 100%;
-        margin: 1em auto;
-      }
+      // button {
+      //   width: 50%;
+      //   margin: 1em auto;
+      // }
     }
   }
+}
 
-  @media screen and (max-width: 425px) {
+@media screen and (max-width: 525px) {
+  .main-bottom {
+    .main-bottom-third {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .quote-icon-container {
+    width: 100%;
   }
 }
 </style>

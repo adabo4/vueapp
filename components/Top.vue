@@ -214,5 +214,13 @@ $base-font: "Ubuntu", sans-serif;
       margin: 0 auto;
     }
   }
+
+  @media screen and (max-width: 320px) {
+    .btn-comp {
+      .btn {
+        width: 100%;
+      }
+    }
+  }
 }
 </style>
