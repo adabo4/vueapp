@@ -41,14 +41,6 @@ import { quoteAuthors } from "~/data/authordata.js";
 import Form from "./Form.vue";
 
 export default {
-  // props: {
-  //   showModal: Boolean,
-  // },
-  // methods: {
-  //   closeModal() {
-  //     this.$emit("toggle-modal");
-  //   },
-  // },
   components: {
     ListComponent,
   },
@@ -58,7 +50,6 @@ export default {
       myItems: listItems,
       anotherItems: anotherListItems,
       quoteAuthors,
-      // showModal: false,
     };
   },
 

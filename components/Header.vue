@@ -6,9 +6,7 @@
         <Headline>Zvýšte svoje zisky optimalizáciou vášho eshopu.</Headline>
       </div>
       <div class="buttonitem">
-        <Btn @open="emitOpenModal" style="width: 200px"
-          >Mám záujem o UX audit.</Btn
-        >
+        <Btn style="width: 200px">Mám záujem o UX audit.</Btn>
       </div>
     </div>
   </header>
@@ -20,11 +18,6 @@ import Btn from "./Btn.vue";
 export default {
   components: {
     Btn,
-  },
-  methods: {
-    emitOpenModal() {
-      this.$emit("open-modal");
-    },
   },
 };
 </script>

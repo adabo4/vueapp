@@ -24,14 +24,9 @@ export default {
       type: String,
       default: "0.7rem 1rem",
     },
-    // showModal: {
-    //   type: Boolean,
-    //   default: false,
-    // },
   },
   methods: {
     toggleModal() {
-      // this.$emit("open");
       window.postMessage("open-dialog");
     },
   },
