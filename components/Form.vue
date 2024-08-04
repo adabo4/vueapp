@@ -52,61 +52,61 @@ const closeDialog = function () {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-$base-font: "Ubuntu", sans-serif;
+// $base-font: "Ubuntu", sans-serif;
 
-.modal {
-  top: 0;
-  position: fixed;
-  background: rgba(255, 255, 255, 0.9);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start; /* Align to the top of the screen */
-  z-index: 1000;
-  overflow-y: auto; /* Allows the modal to scroll if content is too large */
-}
+// .modal {
+//   top: 0;
+//   position: fixed;
+//   background: rgba(255, 255, 255, 0.9);
+//   width: 100%;
+//   height: 100%;
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start; /* Align to the top of the screen */
+//   z-index: 1000;
+//   overflow-y: auto; /* Allows the modal to scroll if content is too large */
+// }
 
-.modal-content {
-  position: relative;
-  padding: 1em;
-  // width: 600px;
-  margin: auto;
-  background-color: white;
-  box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  width: 90%;
-  margin-top: 100px; /* Set the desired margin-top */
-}
+// .modal-content {
+//   position: relative;
+//   padding: 1em;
+//   // width: 600px;
+//   margin: auto;
+//   background-color: white;
+//   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
+//   max-width: 600px;
+//   width: 90%;
+//   margin-top: 100px; /* Set the desired margin-top */
+// }
 
-.close-icon {
-  font-size: 3em;
-  top: 0;
-  right: 0;
-  position: absolute;
-  margin: 20px 15px 0 0;
-}
-.form-headline {
-  font-size: 2em;
-  font-family: $base-font;
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
-  margin: 50px auto;
-  font-weight: 900;
-}
-.number {
-  display: flex;
+// .close-icon {
+//   font-size: 3em;
+//   top: 0;
+//   right: 0;
+//   position: absolute;
+//   margin: 20px 15px 0 0;
+// }
+// .form-headline {
+//   font-size: 2em;
+//   font-family: $base-font;
+//   width: 100%;
+//   max-width: 400px;
+//   text-align: center;
+//   margin: 50px auto;
+//   font-weight: 900;
+// }
+// .number {
+//   display: flex;
 
-  .form-input {
-    width: 40%;
-  }
-}
+//   .form-input {
+//     width: 40%;
+//   }
+// }
 
-.contact-btn {
-  display: block;
-  margin: 1em auto;
-}
+// .contact-btn {
+//   display: block;
+//   margin: 1em auto;
+// }
 </style>

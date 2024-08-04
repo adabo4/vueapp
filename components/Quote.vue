@@ -53,46 +53,46 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 $base-font: "Ubuntu", sans-serif;
-.quote-icon-container {
-  position: relative;
-  width: 460px;
-  max-height: auto;
-  border: 2px solid rgba(128, 128, 128, 0.3);
+// .quote-icon-container {
+//   position: relative;
+//   width: 460px;
+//   max-height: auto;
+//   border: 2px solid rgba(128, 128, 128, 0.3);
 
-  p {
-    font-family: $base-font;
-    font-size: 1.1em;
-    line-height: 1.7em;
-    padding: 1.2em;
-    margin: 1em;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    // -webkit-line-clamp: 7;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-}
-.quote-icon {
-  transform: rotate(180deg);
-  position: absolute;
-  top: -50px;
-  left: 1em;
-}
+//   p {
+//     font-family: $base-font;
+//     font-size: 1.1em;
+//     line-height: 1.7em;
+//     padding: 1.2em;
+//     margin: 1em;
+//     display: -webkit-box;
+//     -webkit-box-orient: vertical;
+//     // -webkit-line-clamp: 7;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//   }
+// }
+// .quote-icon {
+//   transform: rotate(180deg);
+//   position: absolute;
+//   top: -50px;
+//   left: 1em;
+// }
 
-.read-more,
-.read-less {
-  color: #eb345c;
-  font-weight: 600;
-}
+// .read-more,
+// .read-less {
+//   color: #eb345c;
+//   font-weight: 600;
+// }
 
-@media screen and (max-width: 800px) {
-  .quote-icon-container {
-    width: 360px;
-    margin: auto;
+// @media screen and (max-width: 800px) {
+//   .quote-icon-container {
+//     width: 360px;
+//     margin: auto;
 
-    p {
-      display: block;
-    }
-  }
-}
+//     p {
+//       display: block;
+//     }
+//   }
+// }
 </style>

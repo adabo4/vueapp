@@ -52,13 +52,13 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 $base-font: "Ubuntu", sans-serif;
-.btn {
-  background-color: #eb345c;
-  font-weight: 600;
-  color: white;
-  border-radius: 0.5rem;
-  border: none;
-  font-family: $base-font;
-  width: 100%;
-}
+// .btn {
+//   background-color: #eb345c;
+//   font-weight: 600;
+//   color: white;
+//   border-radius: 0.5rem;
+//   border: none;
+//   font-family: $base-font;
+//   width: 100%;
+// }
 </style>

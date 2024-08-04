@@ -69,87 +69,87 @@
 <script setup></script>
 
 <style lang="scss">
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
-$base-font: "Ubuntu", sans-serif;
+// $base-font: "Ubuntu", sans-serif;
 
-.number-icon {
-  max-width: 75px;
-  img {
-    width: 100%;
-  }
-}
-.numbers-container {
-  font-family: $base-font;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 100%;
-  max-width: 1000px;
-  margin: 2em auto;
-}
+// .number-icon {
+//   max-width: 75px;
+//   img {
+//     width: 100%;
+//   }
+// }
+// .numbers-container {
+//   font-family: $base-font;
+//   display: grid;
+//   grid-template-columns: 1fr 1fr;
+//   grid-template-rows: 1fr 1fr;
+//   width: 100%;
+//   max-width: 1000px;
+//   margin: 2em auto;
+// }
 
-.num {
-  display: flex;
-  justify-content: flex-end;
-}
-.number-arrow-left {
-  img {
-    transform: rotateY(180deg);
-  }
-}
+// .num {
+//   display: flex;
+//   justify-content: flex-end;
+// }
+// .number-arrow-left {
+//   img {
+//     transform: rotateY(180deg);
+//   }
+// }
 
-.four {
-  grid-column-start: 2;
-  grid-column-end: 2;
-}
+// .four {
+//   grid-column-start: 2;
+//   grid-column-end: 2;
+// }
 
-.number-text {
-  width: 380px;
-  line-height: 1.6em;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+// .number-text {
+//   width: 380px;
+//   line-height: 1.6em;
+//   display: flex;
+//   flex-direction: column;
+//   flex-wrap: wrap;
 
-  h5 {
-    font-size: 1.5em;
-  }
+//   h5 {
+//     font-size: 1.5em;
+//   }
 
-  p {
-    font-size: 1em;
-    margin: 0.5em 0;
-  }
-}
+//   p {
+//     font-size: 1em;
+//     margin: 0.5em 0;
+//   }
+// }
 
-@media screen and (max-width: 900px) {
-  .numbers-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    width: auto;
+// @media screen and (max-width: 900px) {
+//   .numbers-container {
+//     grid-template-columns: 1fr;
+//     grid-template-rows: 1fr;
+//     width: auto;
 
-    .number-arrow-left,
-    .number-arrow-right {
-      display: none;
-    }
+//     .number-arrow-left,
+//     .number-arrow-right {
+//       display: none;
+//     }
 
-    .item {
-      grid-column: 1 / 2;
-      margin: 1em;
-      gap: 1em;
-    }
+//     .item {
+//       grid-column: 1 / 2;
+//       margin: 1em;
+//       gap: 1em;
+//     }
 
-    .number-icon {
-      width: 100%;
+//     .number-icon {
+//       width: 100%;
 
-      .num-two,
-      .num-four {
-        display: none;
-      }
-    }
-    .number-text {
-      width: auto;
-      font-size: 1.2em;
-    }
-  }
-}
+//       .num-two,
+//       .num-four {
+//         display: none;
+//       }
+//     }
+//     .number-text {
+//       width: auto;
+//       font-size: 1.2em;
+//     }
+//   }
+// }
 </style>
