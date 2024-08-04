@@ -1,7 +1,7 @@
 <template>
   <Header></Header>
   <Main></Main>
-  <!-- <Footer></Footer> -->
+  <Footer></Footer>
 </template>
 
 <script>

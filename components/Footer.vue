@@ -50,11 +50,22 @@ footer {
 
 h6 {
   font-family: $base-font;
-  font-size: 4rem;
+  font-size: 4em;
   text-transform: uppercase;
   font-weight: 800;
   color: white;
-  width: fit-content;
+  width: auto;
   margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-div {
+    width: 100%;
+  }
+
+  .footer-contact {
+    flex-direction: column;
+  }
 }
 </style>
