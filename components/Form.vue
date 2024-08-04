@@ -91,7 +91,8 @@ $base-font: "Ubuntu", sans-serif;
 .form-headline {
   font-size: 2em;
   font-family: $base-font;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   text-align: center;
   margin: 50px auto;
   font-weight: 900;
