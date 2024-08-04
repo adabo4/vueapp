@@ -8,14 +8,40 @@
         <button class="close-icon" @click="closeDialog">
           <MaterialSymbolsLightCancel> </MaterialSymbolsLightCancel>
         </button>
-        <Input req="true">Meno:</Input>
+
+        <div class="form-input">
+          <label>Meno:<span> *</span></label>
+          <input v-model="name" type="text" />
+          <p v-if="nameError">{{ nameError }}</p>
+        </div>
+
+        <!-- <Input req="true">Meno:</Input> -->
         <div class="number">
-          <Input req="true">Email:</Input>
+          <div class="form-input">
+            <label>Email:<span> *</span></label>
+            <input v-model="email" type="email" />
+            <p v-if="emailError">{{ emailError }}</p>
+          </div>
           <Input>Tel. čislo:</Input>
         </div>
         <Input>Webstránka:</Input>
-        <Textarea req="true">Poznámka:</Textarea>
-        <Btn width="90%" height="70px" fontSize="1.1rem" class="contact-btn"
+        <!-- <Textarea req="true">Poznámka:</Textarea> -->
+        <div class="form-input">
+          <label><slot></slot><span> *</span></label>
+          <textarea
+            rows="50"
+            cols="50"
+            v-model="text"
+            placeholder="Je niečo, čo by ste sa nás chceli spýtať?"
+          ></textarea>
+          <p v-if="textError">{{ errorMsg3 }}</p>
+        </div>
+        <Btn
+          @click="sendMessage"
+          width="90%"
+          height="70px"
+          fontSize="1.1rem"
+          class="contact-btn"
           >Kontaktujte ma.</Btn
         >
       </form>
@@ -24,16 +50,37 @@
 </template>
 
 <script setup lang="ts">
-// export default {
-//   name: "Form",
-//   methods: {
-//     closeModal() {
-//       this.$emit("close");
-//     },
-//   },
-// };
+import { ref } from "vue";
+
+const email = ref("");
+const name = ref("");
+const text = ref("");
+
+const nameError = ref("");
+const emailError = ref("");
+const textError = ref("");
+
+const errorMsg = "Zadajte email v platnom formáte.";
+const errorMsg2 = "Zadajte min. 2 písmená.";
+const errorMsg3 = "Pole nesmie byť prázdne.";
+
+console.log("value is", email.value);
 
 const isDialogOpen = ref(false);
+const empty = false;
+const regEx = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+
+const isValidEmail = computed(() => {
+  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value);
+});
+
+const isNameValid = computed(() => {
+  return name.value.length >= 2;
+});
+
+const isTextValid = computed(() => {
+  return text.value.length > 0;
+});
 
 onMounted(() => {
   window.addEventListener("message", (event) => {
@@ -49,64 +96,20 @@ onMounted(() => {
 const closeDialog = function () {
   isDialogOpen.value = false;
 };
+
+const sendMessage = function (e: any) {
+  e.preventDefault();
+
+  // if (!isValidEmail.value) {
+  //   emailError.value = errorMsg;
+  // } else {
+  //   emailError.value = "";
+  //   console.log("message sent:", email.value);
+  //   // Add your form submission logic here
+  // }
+
+  isValidEmail.value ? (emailError.value = "") : (emailError.value = errorMsg);
+  isNameValid.value ? (nameError.value = "") : (nameError.value = errorMsg2);
+  isTextValid.value ? (textError.value = "") : (textError.value = errorMsg3);
+};
 </script>
-
-<style lang="scss" scoped>
-// @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
-// $base-font: "Ubuntu", sans-serif;
-
-// .modal {
-//   top: 0;
-//   position: fixed;
-//   background: rgba(255, 255, 255, 0.9);
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: flex-start; /* Align to the top of the screen */
-//   z-index: 1000;
-//   overflow-y: auto; /* Allows the modal to scroll if content is too large */
-// }
-
-// .modal-content {
-//   position: relative;
-//   padding: 1em;
-//   // width: 600px;
-//   margin: auto;
-//   background-color: white;
-//   box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.1);
-//   max-width: 600px;
-//   width: 90%;
-//   margin-top: 100px; /* Set the desired margin-top */
-// }
-
-// .close-icon {
-//   font-size: 3em;
-//   top: 0;
-//   right: 0;
-//   position: absolute;
-//   margin: 20px 15px 0 0;
-// }
-// .form-headline {
-//   font-size: 2em;
-//   font-family: $base-font;
-//   width: 100%;
-//   max-width: 400px;
-//   text-align: center;
-//   margin: 50px auto;
-//   font-weight: 900;
-// }
-// .number {
-//   display: flex;
-
-//   .form-input {
-//     width: 40%;
-//   }
-// }
-
-// .contact-btn {
-//   display: block;
-//   margin: 1em auto;
-// }
-</style>
