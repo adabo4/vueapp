@@ -53,7 +53,7 @@ analýz a dát. Aj ich zásluhou"
 
   <section class="main-center">
     <div class="headline-div">
-      <MainHeadline class="main-headline"
+      <MainHeadline class="main-headline size-in"
         >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
       >
     </div>
@@ -114,24 +114,39 @@ import { quoteAuthors } from "~/data/authordata.js";
 const anotherItems = anotherListItems;
 onMounted(() => {
   const sliders = document.querySelectorAll(".slide");
+  const sizeIn = document.querySelectorAll(".size-in");
+
   const options = {
     threshold: 0,
     rootMargin: "0px 0px 30px 0px",
   };
 
-  const observer = new IntersectionObserver(function (entries, observer) {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add("appear");
-        console.log(entry);
+        if (entry.target.classList.contains("slide")) {
+          entry.target.classList.add("appear");
+        }
+        if (entry.target.classList.contains("size-in")) {
+          entry.target.classList.add("size-in-appear");
+        }
       } else {
-        entry.target.classList.remove("appear");
+        if (entry.target.classList.contains("slide")) {
+          entry.target.classList.remove("appear");
+        }
+        if (entry.target.classList.contains("size-in")) {
+          entry.target.classList.remove("size-in-appear");
+        }
       }
     });
   }, options);
 
   sliders.forEach((slider) => {
     observer.observe(slider);
+  });
+
+  sizeIn.forEach((size) => {
+    observer.observe(size);
   });
 });
 </script>
