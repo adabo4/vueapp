@@ -4,11 +4,13 @@
   <section class="quote-section">
     <div class="quote-section-top">
       <Quote
+        class="slide from-left"
         text="Pravidelné UX audity a postupné vylepšovanie nášho internetového obchodu je už niekoľko rokov súčasťou našej dlhodobej stratégie v predaji. UX tím v Riešeniach odvádza skvelú prácu, ktorú sprevádzajú viditeľné výsledky a spokojnosť našich zákazníkov. Okrem ich prístupu k nášmu biznisu si aj my dávame záležať na kvalite našich služieb. Asi by to chcelo nejaky dlasi text about dmeogáffa fa sfla flakf ldkf asfk dlfk  "
         :sliceWords="40"
       />
 
       <QuoteAuthor
+        class="slide from-left"
         author="Jozef Korman"
         position="Konateľ"
         url="https://www.SvetNápojov.sk"
@@ -18,6 +20,7 @@
     </div>
     <div class="quote-section-bottom">
       <Quote
+        class="slide from-right"
         text="S UX tímom Riešení úzko spolupracujeme už
 dlhé roky a sú dôležitým partnerom nášho
 biznisu. Vďaka ich know-how pre nás od
@@ -28,6 +31,7 @@ analýz a dát. Aj ich zásluhou"
         :sliceWords="50"
       />
       <QuoteAuthor
+        class="slide from-right"
         author="Richard Wohlstein"
         position="Retail Manager"
         url="https://www.AlainDelon.com"
@@ -82,7 +86,7 @@ analýz a dát. Aj ich zásluhou"
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import Btn from "./Btn.vue";
 import ListComponent from "./ListComponent.vue";
 import { listItems, anotherListItems } from "~/data/listItems";
@@ -90,22 +94,46 @@ import Quote from "~/components/Quote.vue";
 import QuoteAuthor from "./QuoteAuthor.vue";
 import { quoteAuthors } from "~/data/authordata.js";
 
-export default {
-  components: {
-    ListComponent,
-  },
-  Quote,
-  data() {
-    return {
-      myItems: listItems,
-      anotherItems: anotherListItems,
-      quoteAuthors,
-    };
-  },
+// export default {
+//   components: {
+//     ListComponent,
+//   },
+//   Quote,
+//   data() {
+//     return {
+//       myItems: listItems,
+//       anotherItems: anotherListItems,
+//       quoteAuthors,
+//     };
+//   },
 
-  Btn,
-  QuoteAuthor,
-};
+//   Btn,
+//   QuoteAuthor,
+// };
+
+const anotherItems = anotherListItems;
+onMounted(() => {
+  const sliders = document.querySelectorAll(".slide");
+  const options = {
+    threshold: 0,
+    rootMargin: "0px 0px 30px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("appear");
+        console.log(entry);
+      } else {
+        entry.target.classList.remove("appear");
+      }
+    });
+  }, options);
+
+  sliders.forEach((slider) => {
+    observer.observe(slider);
+  });
+});
 </script>
 
 <style lang="scss" scoped>

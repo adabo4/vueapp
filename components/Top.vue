@@ -59,7 +59,6 @@ const anotherItems = anotherListItems;
 
 onMounted(() => {
   const section1 = document.querySelectorAll(".section1");
-  console.log(section1);
 
   const options = {
     root: null,
@@ -74,6 +73,11 @@ onMounted(() => {
       } else {
         entry.target.classList.remove("fade-in");
       }
+      // if (entry.isIntersecting) {
+      //   entry.target.classList.add('fade-in');
+      // } else {
+      //   entry.target.classList.remove('fade-in');
+      // }
     });
   }, options);
 
