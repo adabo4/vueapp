@@ -15,19 +15,25 @@
           <p class="error" v-if="nameError">{{ nameError }}</p>
         </div>
 
-        <!-- <Input req="true">Meno:</Input> -->
         <div class="number">
           <div class="form-input">
             <label>Email:<span> *</span></label>
             <input v-model="email" type="email" />
             <p class="error" v-if="emailError">{{ emailError }}</p>
           </div>
-          <Input>Tel. čislo:</Input>
+          <div class="form-input">
+            <label>Tel. číslo:</label>
+            <input type="text" />
+          </div>
         </div>
-        <Input>Webstránka:</Input>
-        <!-- <Textarea req="true">Poznámka:</Textarea> -->
+
         <div class="form-input">
-          <label><slot></slot><span> *</span></label>
+          <label>Webstránka:</label>
+          <input type="text" />
+        </div>
+
+        <div class="form-input">
+          <label>Text: <span>*</span></label>
           <textarea
             rows="50"
             cols="50"
@@ -36,7 +42,9 @@
           ></textarea>
           <p class="error" v-if="textError">{{ errorMsg3 }}</p>
         </div>
+
         <p class="sentMessage" v-if="formSubmitted">{{ messageSent }}</p>
+
         <Btn
           @click="sendMessage"
           width="90%"
@@ -116,5 +124,8 @@ const sendMessage = function (e: any) {
   name.value = "";
   email.value = "";
   text.value = "";
+  setInterval(() => {
+    formSubmitted.value = false;
+  }, 5000);
 };
 </script>
