@@ -12,7 +12,7 @@
         <div class="form-input">
           <label>Meno:<span> *</span></label>
           <input v-model="name" type="text" />
-          <p v-if="nameError">{{ nameError }}</p>
+          <p class="error" v-if="nameError">{{ nameError }}</p>
         </div>
 
         <!-- <Input req="true">Meno:</Input> -->
@@ -20,7 +20,7 @@
           <div class="form-input">
             <label>Email:<span> *</span></label>
             <input v-model="email" type="email" />
-            <p v-if="emailError">{{ emailError }}</p>
+            <p class="error" v-if="emailError">{{ emailError }}</p>
           </div>
           <Input>Tel. čislo:</Input>
         </div>
@@ -34,8 +34,9 @@
             v-model="text"
             placeholder="Je niečo, čo by ste sa nás chceli spýtať?"
           ></textarea>
-          <p v-if="textError">{{ errorMsg3 }}</p>
+          <p class="error" v-if="textError">{{ errorMsg3 }}</p>
         </div>
+        <p class="sentMessage" v-if="formSubmitted">{{ messageSent }}</p>
         <Btn
           @click="sendMessage"
           width="90%"
@@ -55,6 +56,7 @@ import { ref } from "vue";
 const email = ref("");
 const name = ref("");
 const text = ref("");
+const formSubmitted = ref(false);
 
 const nameError = ref("");
 const emailError = ref("");
@@ -63,15 +65,13 @@ const textError = ref("");
 const errorMsg = "Zadajte email v platnom formáte.";
 const errorMsg2 = "Zadajte min. 2 písmená.";
 const errorMsg3 = "Pole nesmie byť prázdne.";
-
-console.log("value is", email.value);
+const messageSent = "Vaša správa bola odoslaná!";
 
 const isDialogOpen = ref(false);
-const empty = false;
-const regEx = "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
+const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
 const isValidEmail = computed(() => {
-  return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email.value);
+  return regEx.test(email.value);
 });
 
 const isNameValid = computed(() => {
@@ -81,6 +81,14 @@ const isNameValid = computed(() => {
 const isTextValid = computed(() => {
   return text.value.length > 0;
 });
+
+const sendSuccessfully = () => {
+  if (isValidEmail.value && isNameValid.value && isTextValid.value) {
+    formSubmitted.value = true;
+  } else {
+    formSubmitted.value = false;
+  }
+};
 
 onMounted(() => {
   window.addEventListener("message", (event) => {
@@ -100,16 +108,13 @@ const closeDialog = function () {
 const sendMessage = function (e: any) {
   e.preventDefault();
 
-  // if (!isValidEmail.value) {
-  //   emailError.value = errorMsg;
-  // } else {
-  //   emailError.value = "";
-  //   console.log("message sent:", email.value);
-  //   // Add your form submission logic here
-  // }
-
   isValidEmail.value ? (emailError.value = "") : (emailError.value = errorMsg);
   isNameValid.value ? (nameError.value = "") : (nameError.value = errorMsg2);
   isTextValid.value ? (textError.value = "") : (textError.value = errorMsg3);
+
+  sendSuccessfully();
+  name.value = "";
+  email.value = "";
+  text.value = "";
 };
 </script>
