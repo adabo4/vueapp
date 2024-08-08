@@ -1,6 +1,6 @@
 <template>
   <div class="top-grid">
-    <div class="tooop">
+    <div class="tooop section1">
       <div class="headline-div">
         <MainHeadline class="main-headline"
           >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
@@ -10,7 +10,7 @@
         <PartnersLogo />
       </div>
     </div>
-    <div class="ceeenter">
+    <div class="ceeenter section1">
       <p class="first-p">
         UX auditom Vášho riešenia lepšie pochopíte, ako vaší zákazníci používajú
         Váš produkt, <strong>zvýšite ich spokojnosť a hlavne zisky.</strong>
@@ -19,7 +19,7 @@
         <ListComponent :items="myItems"> </ListComponent>
       </div>
     </div>
-    <div class="bottooom">
+    <div class="bottooom section1">
       <p class="second-p">
         Dosiahnite lepšie výsledky vašej webstránky alebo e-shopu
         <strong>pomocou UX auditu.</strong>
@@ -31,31 +31,56 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import Btn from "./Btn.vue";
 import ListComponent from "./ListComponent.vue";
 import { listItems, anotherListItems } from "~/data/listItems";
-import Quote from "~/components/Quote.vue";
-import QuoteAuthor from "./QuoteAuthor.vue";
-import { quoteAuthors } from "~/data/authordata.js";
-import Form from "./Form.vue";
+import { onMounted } from "vue";
 
-export default {
-  components: {
-    ListComponent,
-  },
-  Quote,
-  data() {
-    return {
-      myItems: listItems,
-      anotherItems: anotherListItems,
-      quoteAuthors,
-    };
-  },
+// export default {
+//   components: {
+//     ListComponent,
+//   },
+//   Quote,
+//   data() {
+//     return {
+//       myItems: listItems,
+//       anotherItems: anotherListItems,
+//       quoteAuthors,
+//     };
+//   },
 
-  Btn,
-  QuoteAuthor,
-};
+//   Btn,
+//   QuoteAuthor,
+// };
+
+const myItems = listItems;
+const anotherItems = anotherListItems;
+
+onMounted(() => {
+  const section1 = document.querySelectorAll(".section1");
+  console.log(section1);
+
+  const options = {
+    root: null,
+    threshold: 0.1,
+    rootMargin: "0px 0px -110px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in");
+      } else {
+        entry.target.classList.remove("fade-in");
+      }
+    });
+  }, options);
+
+  section1.forEach((section) => {
+    observer.observe(section);
+  });
+});
 </script>
 
 <style lang="scss">

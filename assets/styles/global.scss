@@ -105,6 +105,10 @@ li {
   color: white;
   font-family: $base-font;
   font-size: 1.7rem;
+  text-decoration: none;
+}
+.mail {
+  color: #eb345c;
 }
 /*HEADER */
 
@@ -353,7 +357,7 @@ header {
   textarea {
   }
 }
-/*TOP */
+/*TOP PAGE*/
 
 .top-grid {
   display: grid;
@@ -416,6 +420,15 @@ header {
   .btn {
     width: 25em;
   }
+}
+
+.section1 {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+.fade-in {
+  opacity: 1;
 }
 
 @media screen and (max-width: 900px) {
@@ -850,10 +863,6 @@ footer {
   gap: 1rem;
   margin: 1rem auto;
   width: fit-content;
-
-  span {
-    color: #eb345c;
-  }
 }
 
 h6 {
