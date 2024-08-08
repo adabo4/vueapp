@@ -89,7 +89,6 @@ import { listItems, anotherListItems } from "~/data/listItems";
 import Quote from "~/components/Quote.vue";
 import QuoteAuthor from "./QuoteAuthor.vue";
 import { quoteAuthors } from "~/data/authordata.js";
-import Form from "./Form.vue";
 
 export default {
   components: {
