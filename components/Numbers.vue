@@ -47,7 +47,7 @@
         </p>
       </div>
     </div>
-    <div class="number-arrow-right">
+    <div class="item number-arrow-right">
       <img src="/public/img/arrow.png" alt="" />
     </div>
     <div class="item num four">
