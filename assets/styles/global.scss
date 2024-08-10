@@ -361,7 +361,7 @@ header {
   textarea {
   }
 }
-/*TOP PAGE*/
+/*TOP SECTION*/
 
 .top-grid {
   display: grid;
@@ -479,7 +479,7 @@ header {
     }
 
     .list-component {
-      margin: 1em auto;
+      margin: 1em;
       padding: 1em;
 
       // .check-icon {
@@ -896,6 +896,10 @@ header {
   .main-bottom {
     .main-bottom-third {
       width: 90%;
+    }
+
+    .third {
+      margin: 2em;
     }
   }
 }
