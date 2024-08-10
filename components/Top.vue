@@ -1,6 +1,6 @@
 <template>
   <div class="top-grid">
-    <div class="tooop section1">
+    <div class="tooop fade-in">
       <div class="headline-div">
         <MainHeadline class="main-headline"
           >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
@@ -10,7 +10,7 @@
         <PartnersLogo />
       </div>
     </div>
-    <div class="ceeenter section1">
+    <div class="ceeenter fade-in">
       <p class="first-p">
         UX auditom Vášho riešenia lepšie pochopíte, ako vaší zákazníci používajú
         Váš produkt, <strong>zvýšite ich spokojnosť a hlavne zisky.</strong>
@@ -19,7 +19,7 @@
         <ListComponent :items="myItems"> </ListComponent>
       </div>
     </div>
-    <div class="bottooom section1">
+    <div class="bottooom fade-in">
       <p class="second-p">
         Dosiahnite lepšie výsledky vašej webstránky alebo e-shopu
         <strong>pomocou UX auditu.</strong>
@@ -36,6 +36,7 @@ import Btn from "./Btn.vue";
 import ListComponent from "./ListComponent.vue";
 import { listItems, anotherListItems } from "~/data/listItems";
 import { onMounted } from "vue";
+import { createObserver } from "@/utils/observer";
 
 // export default {
 //   components: {
@@ -58,31 +59,33 @@ const myItems = listItems;
 const anotherItems = anotherListItems;
 
 onMounted(() => {
-  const section1 = document.querySelectorAll(".section1");
+  const faders = document.querySelectorAll(".fade-in");
 
-  const options = {
+  const appearoptions = {
     root: null,
     threshold: 0.1,
     rootMargin: "0px 0px -110px 0px",
   };
 
-  const observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("fade-in");
-      } else {
-        entry.target.classList.remove("fade-in");
-      }
-      // if (entry.isIntersecting) {
-      //   entry.target.classList.add('fade-in');
-      // } else {
-      //   entry.target.classList.remove('fade-in');
-      // }
-    });
-  }, options);
+  // const observer = new IntersectionObserver(function (entries, observer) {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       entry.target.classList.add("fade-in");
+  //     } else {
+  //       entry.target.classList.remove("fade-in");
+  //     }
+  //     // if (entry.isIntersecting) {
+  //     //   entry.target.classList.add('fade-in');
+  //     // } else {
+  //     //   entry.target.classList.remove('fade-in');
+  //     // }
+  //   });
+  // }, options);
 
-  section1.forEach((section) => {
-    observer.observe(section);
+  const observer = createObserver(appearoptions);
+
+  faders.forEach((fader) => {
+    observer.observe(fader);
   });
 });
 </script>

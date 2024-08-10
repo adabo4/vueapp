@@ -64,23 +64,23 @@ analýz a dát. Aj ich zásluhou"
   </section>
 
   <div class="main-bottom">
-    <div class="headline-div first">
+    <div class="fade-in-bottom headline-div first">
       <MainHeadline class="main-headline"
         >Zameriame sa na to <span>najdôležitejšie</span>.</MainHeadline
       >
     </div>
 
-    <div class="main-bottom-left second">
+    <div class="fade-in-bottom second">
       <p class="third-p">
         Dosiahnite lepšie výsledky vašej webstránky alebo e-shopu
         <strong>pomocou UX auditu.</strong>
       </p>
-      <div class="main-bottom-third">
+      <div class="fade-in-bottom main-bottom-third">
         <Btn height="60px" fontSize="1.1rem">Mám záujem o UX audit.</Btn>
       </div>
     </div>
 
-    <div class="list-component third">
+    <div class="fade-in-bottom list-component third">
       <ListComponent :items="anotherItems"> </ListComponent>
     </div>
   </div>
@@ -93,6 +93,7 @@ import { listItems, anotherListItems } from "~/data/listItems";
 import Quote from "~/components/Quote.vue";
 import QuoteAuthor from "./QuoteAuthor.vue";
 import { quoteAuthors } from "~/data/authordata.js";
+import { createObserver } from "@/utils/observer";
 
 // export default {
 //   components: {
@@ -115,31 +116,19 @@ const anotherItems = anotherListItems;
 onMounted(() => {
   const sliders = document.querySelectorAll(".slide");
   const sizeIn = document.querySelectorAll(".size-in");
+  const faders = document.querySelectorAll(".fade-in-bottom");
 
   const options = {
     threshold: 0,
     rootMargin: "0px 0px 30px 0px",
   };
+  const bottomOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 100px 0px 0px",
+  };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (entry.target.classList.contains("slide")) {
-          entry.target.classList.add("appear");
-        }
-        if (entry.target.classList.contains("size-in")) {
-          entry.target.classList.add("size-in-appear");
-        }
-      } else {
-        if (entry.target.classList.contains("slide")) {
-          entry.target.classList.remove("appear");
-        }
-        if (entry.target.classList.contains("size-in")) {
-          entry.target.classList.remove("size-in-appear");
-        }
-      }
-    });
-  }, options);
+  const observer = createObserver(options);
+  const observerBottomFaders = createObserver(bottomOptions);
 
   sliders.forEach((slider) => {
     observer.observe(slider);
@@ -147,6 +136,9 @@ onMounted(() => {
 
   sizeIn.forEach((size) => {
     observer.observe(size);
+  });
+  faders.forEach((fader) => {
+    observerBottomFaders.observe(fader);
   });
 });
 </script>
