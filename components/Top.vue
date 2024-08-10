@@ -3,7 +3,7 @@
     <div class="tooop fade-in">
       <div class="headline-div">
         <MainHeadline class="main-headline"
-          >Rýchle <span>výsledky</span> pomocou UX auditu.</MainHeadline
+          >Rýchle <u>výsledky</u> pomocou UX auditu.</MainHeadline
         >
       </div>
       <div class="partners-logo">

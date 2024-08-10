@@ -373,8 +373,9 @@ header {
 .headline-div {
   width: 40%;
 
-  span {
-    border-bottom: 15px rgba(255, 192, 203, 0.5) solid;
+  u {
+    text-decoration: 15px underline #ffc0cb80;
+    text-decoration-skip-ink: none;
   }
 }
 

@@ -54,7 +54,7 @@ analýz a dát. Aj ich zásluhou"
   <section class="main-center">
     <div class="headline-div">
       <MainHeadline class="main-headline size-in"
-        >Rýchla a jednoduchá cesta k <span>výsledkom.</span></MainHeadline
+        >Rýchla a jednoduchá cesta k <u>výsledkom.</u></MainHeadline
       >
     </div>
 
@@ -66,7 +66,7 @@ analýz a dát. Aj ich zásluhou"
   <div class="main-bottom">
     <div class="fade-in-bottom headline-div first">
       <MainHeadline class="main-headline"
-        >Zameriame sa na to <span>najdôležitejšie</span>.</MainHeadline
+        >Zameriame sa na to <u>najdôležitejšie</u>.</MainHeadline
       >
     </div>
 

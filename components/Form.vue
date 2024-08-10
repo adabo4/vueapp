@@ -71,8 +71,8 @@ const emailError = ref("");
 const textError = ref("");
 
 const errorMsg = "Zadajte email v platnom formáte.";
-const errorMsg2 = "Zadajte min. 2 písmená.";
-const errorMsg3 = "Pole nesmie byť prázdne.";
+const errorMsg2 = "Zadajte min. 2 znaky.";
+const errorMsg3 = "Textové pole nesmie byť prázdne.";
 const messageSent = "Vaša správa bola odoslaná!";
 
 const isDialogOpen = ref(false);
@@ -126,6 +126,6 @@ const sendMessage = function (e: any) {
   text.value = "";
   setInterval(() => {
     formSubmitted.value = false;
-  }, 5000);
+  }, 6000);
 };
 </script>
