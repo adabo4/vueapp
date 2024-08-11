@@ -4,41 +4,39 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: "Btn",
-  props: {
-    height: {
-      type: String,
-      default: "auto",
-    },
-    fontSize: {
-      type: String,
-      default: "0.9rem",
-    },
-    padding: {
-      type: String,
-      default: "0.7rem 1rem",
-    },
+<script setup lang="ts">
+import { computed } from "vue";
+import { defineProps, defineEmits } from "vue";
+const props = defineProps({
+  height: {
+    type: String,
+    default: "auto",
   },
-  methods: {
-    toggleModal() {
-      window.postMessage("open-dialog");
-    },
+  fontSize: {
+    type: String,
+    default: "0.9rem",
   },
-  computed: {
-    btn() {
-      return {
-        btn: true,
-      };
-    },
-    customStyle() {
-      return {
-        height: this.height,
-        fontSize: this.fontSize,
-        padding: this.padding,
-      };
-    },
+  padding: {
+    type: String,
+    default: "0.7rem 1rem",
   },
+});
+
+const toggleModal = function () {
+  window.postMessage("open-dialog");
 };
+
+const btn = computed(() => {
+  return {
+    btn: true,
+  };
+});
+
+const customStyle = computed(() => {
+  return {
+    height: props.height,
+    fontSize: props.fontSize,
+    padding: props.padding,
+  };
+});
 </script>
