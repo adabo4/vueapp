@@ -61,6 +61,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
 
+import MaterialSymbolsLightCancel from "~/components/icons/MaterialSymbolsLightCancel";
+
 const email = ref("");
 const name = ref("");
 const text = ref("");

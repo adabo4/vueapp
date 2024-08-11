@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MaterialSymbolsCheckCircle from "./MaterialSymbolsCheckCircle.vue";
+import MaterialSymbolsCheckCircle from "~/components/icons/MaterialSymbolsCheckCircle.vue";
 
 export default {
   name: "ListComponent",

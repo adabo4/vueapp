@@ -16,6 +16,7 @@
 </template>
 
 <script>
+import IcBaselineFormatQuote from "~/components/icons/IcBaselineFormatQuote";
 export default {
   name: "Quote",
   props: {
