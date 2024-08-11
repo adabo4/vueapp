@@ -1,16 +1,21 @@
 <template>
   <div class="form-input">
-    <label><slot></slot><span v-if="req"> *</span></label>
-    <input v-model="email" type="email" />
+    <label><slot></slot><span v-if="props.req"> *</span></label>
+    <input v-model="email" :type="props.type" />
   </div>
 </template>
 
-<script>
-export default {
-  name: "Input",
-  props: {
+<script setup>
+import { defineProps } from "vue";
+
+const props = defineProps({
+  req: {
     type: Boolean,
-    req: true,
+    default: false,
   },
-};
+  type: {
+    type: String,
+    required: true,
+  },
+});
 </script>
