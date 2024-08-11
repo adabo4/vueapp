@@ -15,37 +15,30 @@
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import IcBaselineFormatQuote from "~/components/icons/IcBaselineFormatQuote";
-export default {
-  name: "Quote",
-  props: {
-    text: {
-      type: String,
-      required: true,
-    },
-    sliceWords: {
-      type: Number,
-      default: 55,
-    },
+import { defineProps, computed, ref } from "vue";
+
+const readMoreActivated = ref(false);
+
+const props = defineProps({
+  text: {
+    type: String,
+    required: true,
   },
-  data() {
-    return {
-      readMoreActivated: false,
-    };
+  sliceWords: {
+    type: Number,
+    default: 55,
   },
-  computed: {
-    shortText() {
-      return this.text.split(" ").slice(0, this.sliceWords).join(" ");
-    },
-    fullText() {
-      return this.text.split(" ").slice(this.sliceWords).join(" ");
-    },
-  },
-  methods: {
-    toggleReadMore() {
-      this.readMoreActivated = !this.readMoreActivated;
-    },
-  },
+});
+const toggleReadMore = () => {
+  readMoreActivated.value = !readMoreActivated.value;
 };
+
+const shortText = computed(() => {
+  return props.text.split(" ").slice(0, props.sliceWords).join(" ");
+});
+const fullText = computed(() => {
+  return props.text.split(" ").slice(props.sliceWords).join(" ");
+});
 </script>
