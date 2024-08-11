@@ -10,13 +10,3 @@ export default {
   name: "PartnersLogo",
 };
 </script>
-
-<style lang="scss">
-// .logo-partners {
-//   width: 100%;
-
-//   img {
-//     width: 50%;
-//   }
-// }
-</style>
