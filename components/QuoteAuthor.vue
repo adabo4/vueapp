@@ -39,30 +39,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-
-$base-font: "Ubuntu", sans-serif;
-// .icon-container {
-//   font-family: $base-font;
-//   display: flex;
-//   gap: 1em;
-//   justify-content: flex-start;
-//   align-items: center;
-//   margin: 1em auto;
-// }
-
-// .quote-author {
-//   p:first-child {
-//     font-weight: 600;
-//   }
-
-//   a {
-//     cursor: pointer;
-//     color: #eb345c;
-//     text-decoration: none;
-//     font-weight: 600;
-//   }
-// }
-</style>
